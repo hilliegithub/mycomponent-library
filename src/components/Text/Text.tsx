@@ -21,9 +21,12 @@ const Text: React.FC<TextProps> = ({
   fontColor,
 }) => {
   return (
-    <StyledText bgColor={bgColor} fontColor={fontColor} disabled={disabled}>
-      {value}
-    </StyledText>
+    <StyledText
+      bgColor={bgColor}
+      fontColor={fontColor}
+      value={value}
+      disabled={disabled}
+    ></StyledText>
   );
 };
 
