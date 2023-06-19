@@ -2,29 +2,11 @@ import React from "react";
 import { RadioProps } from "./Radio.types";
 import styled from "styled-components";
 
-const RadioWrapper = styled.div<RadioProps>`
-  display: inline-block;
-  margin-right: 10px;
-`;
-
-const RadioInput = styled.input`
-  display: none;
-
-  &:checked + label {
-    color: #ff5722;
-  }
-`;
-
-const RadioLabel = styled.label`
-  display: inline-block;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #f5f5f5;
-  }
+const StyledRadio = styled.fieldset<RadioProps>`
+  width: 35vw;
+  color: ${(props) => props.fontColor};
+  background: ${(props) => (!props.disabled ? "#f3c6c9" : props.bgColor)};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 `;
 
 const Radio: React.FC<RadioProps> = ({
@@ -34,26 +16,28 @@ const Radio: React.FC<RadioProps> = ({
   fontColor,
 }) => {
   return (
-    <div>
-      {options.map((option, index) => (
-        <RadioWrapper
-          key={index}
-          options={options}
-          fontColor={fontColor}
-          disabled={disabled}
-          bgColor={bgColor}
-        >
-          <RadioInput
-            color={fontColor}
-            name="drone"
+    <StyledRadio
+      options={options}
+      font-color={fontColor}
+      disabled={disabled}
+      bgColor={bgColor}
+    >
+      <legend>Choose wisely:</legend>
+
+      {options.map((opt) => (
+        <div>
+          <input
+            key={opt}
             type="radio"
-            id={`radio-${index}`}
-            value={option}
+            color={fontColor}
+            id={opt}
+            name="drone"
+            value={opt}
           />
-          <RadioLabel htmlFor={`radio-${index}`}>{option}</RadioLabel>
-        </RadioWrapper>
+          <label>{opt}</label>
+        </div>
       ))}
-    </div>
+    </StyledRadio>
   );
 };
 
