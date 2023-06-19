@@ -1,5 +1,5 @@
 {
-  "name": "@hilliegithub/component-l",
+  "name": "mycomponent-library",
   "version": "0.0.1",
   "description": "Component Library for Buisness Systems",
   "main": "dist/cjs/index.js",
@@ -51,8 +51,5 @@
   },
   "peerDependencies": {
     "react": "^18.2.0"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/hilliegithub"
   }
 }
