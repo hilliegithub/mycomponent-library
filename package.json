@@ -1,6 +1,6 @@
 {
-  "name": "@hilliegithub/mycomponent-library",
-  "version": "0.0.4",
+  "name": "@hilliegithub/component-l",
+  "version": "0.0.1",
   "description": "Component Library for Buisness Systems",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
