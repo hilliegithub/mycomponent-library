@@ -1,14 +1,14 @@
-import React from "react";
-import { DropdownProps } from "./Dropdown.types";
-import styled from "styled-components";
+import React from 'react'
+import { DropdownProps } from './Dropdown.types'
+import styled from 'styled-components'
 
 const StyledDropdown = styled.select<DropdownProps>`
   padding: 2px 5px;
   max-width: fit-content;
-  background-color: ${(props) => (props.disabled ? "#f2c3c2" : props.bgColor)};
+  background-color: ${(props) => (props.disabled ? '#f2c3c2' : props.bgColor)};
   color: black;
-  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-`;
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+`
 
 const Dropdown: React.FC<DropdownProps> = ({ options, disabled, bgColor }) => {
   return (
@@ -19,7 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, disabled, bgColor }) => {
         </option>
       ))}
     </StyledDropdown>
-  );
-};
+  )
+}
 
-export default Dropdown;
+export default Dropdown

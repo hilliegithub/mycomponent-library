@@ -1,19 +1,17 @@
-import React from "react";
-import { TableProps } from "./Table.types";
-import styled from "styled-components";
+import React from 'react'
+import { TableProps } from './Table.types'
+import styled from 'styled-components'
 
 const StyledTable = styled.table<TableProps>`
-  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  background: ${(props) => (props.disabled ? "red" : "undefined")};
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  background: ${(props) => (props.disabled ? 'red' : 'undefined')};
 
   tbody tr {
     :nth-of-type(odd) {
-      background-color: ${(props) =>
-        props.disabled ? "undefined" : props.bgColor};
+      background-color: ${(props) => (props.disabled ? 'undefined' : props.bgColor)};
     }
     :hover {
-      background-color: ${(props) =>
-        !props.disabled ? "lightpink" : "undefined"};
+      background-color: ${(props) => (!props.disabled ? 'lightpink' : 'undefined')};
     }
   }
 
@@ -31,7 +29,7 @@ const StyledTable = styled.table<TableProps>`
   tfoot {
     text-align: center;
   }
-`;
+`
 
 const Table: React.FC<TableProps> = ({
   header,
@@ -42,37 +40,37 @@ const Table: React.FC<TableProps> = ({
   disabled,
 }) => {
   const renderTableColumnHeaders = () => {
-    const head = [];
+    const head = []
 
     for (let i = 0; i < colHeaders.length; i++) {
-      head.push(<th key={i}>{colHeaders[i]}</th>);
+      head.push(<th key={i}>{colHeaders[i]}</th>)
     }
-    return head;
-  };
+    return head
+  }
 
   const renderTableRows = () => {
-    const rows = [];
+    const rows = []
     // const gfg = [
     //   [0, 1, 2],
     //   [3, 4, 5],
     //   [6, 7, 8],
     // ];
     for (let i = 0; i < tableValues.length; i++) {
-      const columns = [];
-      console.log("#ofrows:" + tableValues.length);
-      console.log("#Cols:" + tableValues[0].length);
+      const columns = []
+      console.log('#ofrows:' + tableValues.length)
+      console.log('#Cols:' + tableValues[0].length)
       for (let j = 0; j < tableValues[0].length; j++) {
-        columns.push(<td key={tableValues[i][j]}>{tableValues[i][j]}</td>);
+        columns.push(<td key={tableValues[i][j]}>{tableValues[i][j]}</td>)
         //console.log(gfg[i][j] + "," + i + "," + j);
       }
       rows.push(
-        <tr key={i} style={{ borderBottom: "1px solid #ddd" }}>
+        <tr key={i} style={{ borderBottom: '1px solid #ddd' }}>
           {columns}
-        </tr>
-      );
+        </tr>,
+      )
     }
-    return rows;
-  };
+    return rows
+  }
 
   return (
     <StyledTable
@@ -93,7 +91,7 @@ const Table: React.FC<TableProps> = ({
         </tfoot>
       </table>
     </StyledTable>
-  );
-};
+  )
+}
 
-export default Table;
+export default Table

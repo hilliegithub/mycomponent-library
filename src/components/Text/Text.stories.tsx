@@ -1,21 +1,21 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import Text from "./Text";
+import React from 'react'
+import { Meta, StoryObj } from '@storybook/react'
+import Text from './Text'
 
 const meta: Meta<typeof Text> = {
   component: Text,
-  title: "Hylton/Text",
+  title: 'Hylton/Text',
   argTypes: {},
-};
-export default meta;
+}
+export default meta
 
-type Story = StoryObj<typeof Text>;
+type Story = StoryObj<typeof Text>
 
 export const Primary: Story = {
   args: {
-    bgColor: "#bde5bd",
+    bgColor: '#bde5bd',
     disabled: false,
-    fontColor: "black",
-    value: "Work",
+    fontColor: 'black',
+    value: 'Work',
   },
-};
+}
