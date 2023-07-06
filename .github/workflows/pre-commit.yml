@@ -1,18 +1,32 @@
-name: Test
+name: LibraryCheckTest
 
 on:
   push:
     branches:
       - CI
 jobs:
-  lint_job:
-    name: First Job
+  lint:
+    name:  ESlint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - run: npm install
+      - run: npm run lint:fix
   
+  
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - run: npm run format
+      
+  jest:
+    name: Jest
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - run: npm run test
