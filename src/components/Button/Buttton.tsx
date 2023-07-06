@@ -25,11 +25,10 @@ const Button: React.FC<ButtonProps> = ({
       bgColor={bgColor}
       disabled={disabled}
       font-color={fontColor}
-      onClick={() => alert('Responsive!')}
+      onClick={() => alert('Boo!')}
     >
       {text}
     </StyledButton>
-    // <div>{text}</div>
   )
 }
 
