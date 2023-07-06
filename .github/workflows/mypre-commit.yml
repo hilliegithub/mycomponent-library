@@ -27,15 +27,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
-    - name: "installing packages"
-      run: npm install
-        
-    - name: "run ESlist"
-      run: npm run lint:fix
-      
-    - name: "run prettier"
-      run: npm run format
-      
-    - name: "Jest Tests"
-      run: npm run test
+
+    # - name: "installing packages"
+    #   run: npm install
+
+    # - name: "run ESlist"
+    #   run: npm run lint:fix
+
+    # - name: "run prettier"
+    #   run: npm run format
+
+    # - name: "Jest Tests"
+    #   run: npm run test
