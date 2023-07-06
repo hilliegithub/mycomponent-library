@@ -1,0 +1,19 @@
+name: component-library-ci-checks
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  checks:
+    name: ESlint Prettier Jest Tests 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm run lint:fix
+      - run: npm run format
+      - run: npm run test
