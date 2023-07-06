@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
       bgColor={bgColor}
       disabled={disabled}
       font-color={fontColor}
-      onClick={() => alert('Boo!')}
+      onClick={() => alert('Testing GitHub Workflow #1')}
     >
       {text}
     </StyledButton>
