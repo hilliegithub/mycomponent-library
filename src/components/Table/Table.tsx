@@ -61,7 +61,7 @@ const Table: React.FC<TableProps> = ({
       console.log('#Cols:' + tableValues[0].length)
       for (let j = 0; j < tableValues[0].length; j++) {
         columns.push(<td key={tableValues[i][j]}>{tableValues[i][j]}</td>)
-        //console.log(gfg[i][j] + "," + i + "," + j);
+        // console.log(gfg[i][j] + "," + i + "," + j);
       }
       rows.push(
         <tr key={i} style={{ borderBottom: '1px solid #ddd' }}>

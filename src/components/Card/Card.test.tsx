@@ -13,7 +13,7 @@ describe('Running test for the Card component', () => {
 
   test('Testing to see if the card background changes color when disabled', () => {
     const { container } = render(<Card cardTitle='GoodDoggo' bgColor='yellow' disabled={true} />)
-    //screen.debug();
+    // screen.debug();
     const div = container.querySelector('h1')?.parentElement
     expect(div).toHaveStyle('background-color: #e9f5f9')
   })

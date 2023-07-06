@@ -29,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
     >
       {text}
     </StyledButton>
-    //<div>{text}</div>
+    // <div>{text}</div>
   )
 }
 
